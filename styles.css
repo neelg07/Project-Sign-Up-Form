@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+.main {
+    display: grid;
+    grid-template: 100vh / 35vw 65vw;
+    justify-content: center;
+    align-content: center;
+}
+
+.main > div {
+    border: 1px solid black;
+}
