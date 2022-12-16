@@ -68,29 +68,31 @@ img {
 }
 
 /* Right Side */
+
 input, label {
     display: block;
 }
 
+.info,
+.text,
+form {
+    box-sizing: border-box;
+}
+
 .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template: 1fr 2fr / 1fr;
+    justify-items: center;
 }
 
 .text {
     max-width: 80%;
-    position: relative;
-    bottom: 100px;
-    left: 50px;
 }
 
 form {
     display: grid;
-    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
-
-    position: relative;
-    left: 50px;
+    grid-template: 100px 100px 100px/ 250px 300px;
+    grid-auto-rows: 35px;
 }
 
 .fname {
@@ -124,7 +126,6 @@ form {
 }
 
 .login {
-    position: relative;
-    left: 50px;
-    top: 15px;
+    grid-row: 5 / 6;
+    grid-column: 1 / 2;
 }
