@@ -1,4 +1,4 @@
-* {
+*, .main {
     box-sizing: border-box;
 }
 
@@ -15,8 +15,10 @@ body, html {
 }
 
 .main > div {
-    border: 1px solid black;
+    box-sizing: border-box;
 }
+
+/* Left Side */
 
 img {
     width: 100%;
@@ -63,4 +65,44 @@ img {
 .photocred > a:hover {
     text-decoration: none;
     color: white;
+}
+
+/* Right Side */
+input, label {
+    display: block;
+}
+
+form {
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+}
+
+.fname {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.lname {
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+
+.email {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.phone {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.password {
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
+
+.confirm {
+    grid-row: 3/4;
+    grid-column: 2/3;
 }
