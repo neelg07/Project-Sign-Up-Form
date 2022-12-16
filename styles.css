@@ -72,9 +72,25 @@ input, label {
     display: block;
 }
 
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text {
+    max-width: 80%;
+    position: relative;
+    bottom: 100px;
+    left: 50px;
+}
+
 form {
     display: grid;
     grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+
+    position: relative;
+    left: 50px;
 }
 
 .fname {
@@ -105,4 +121,10 @@ form {
 .confirm {
     grid-row: 3/4;
     grid-column: 2/3;
+}
+
+.login {
+    position: relative;
+    left: 50px;
+    top: 15px;
 }
