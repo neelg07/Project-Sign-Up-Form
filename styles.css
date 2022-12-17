@@ -1,5 +1,8 @@
 *, .main {
     box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+
+    --color-theme: rgb(250, 8, 210); 
 }
 
 body, html {
@@ -61,10 +64,13 @@ img {
 
 .photocred > a:visited,
 .photocred > a:focus,
-.photocred > a:active,
-.photocred > a:hover {
+.photocred > a:active {
     text-decoration: none;
     color: white;
+}
+
+.photocred > a:hover {
+    color:rgb(250, 8, 210);
 }
 
 /* Right Side */
@@ -83,16 +89,30 @@ form {
     display: grid;
     grid-template: 1fr 2fr / 1fr;
     justify-items: center;
+    background-color: black;
 }
 
 .text {
-    max-width: 80%;
+    width: clamp(65%, 420px, 80%);
+    font-size: larger;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding-left: 45px;
+    color: white;
 }
 
 form {
     display: grid;
-    grid-template: 100px 100px 100px/ 250px 300px;
+    grid-template: 80px 80px 80px/ 250px 300px;
     grid-auto-rows: 35px;
+    color: var(--color-theme);
+}
+
+label {
+    font-size: 14px;
 }
 
 .fname {
@@ -128,4 +148,69 @@ form {
 .login {
     grid-row: 5 / 6;
     grid-column: 1 / 2;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 20px;
+    color:white;
+}
+
+input {
+    height: 2rem;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+form > div {
+    padding-left: 20px
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    margin-left: 20px;
+
+    border-radius: 4px;
+    border: 2px solid var(--color-theme);
+    background-color: black;
+
+    color: var(--color-theme);
+    font-size: large;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--color-theme);
+    color: black;
+
+    transform: scale(1.1);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0px);
+}
+
+.header {
+    background-color: rgb(123,104,238);
+    width: 60%;
+    height: 55%;
+    top: 25%;
+    right: 0%;
+
+    position: fixed;
+    opacity: 20%;
+}
+
+.dothis {
+    padding-top: 20px;
+    color: white;
+}
+
+span {
+    font-size: 20px;
+}
+
+a:hover {
+    color: var(--color-theme);
 }
