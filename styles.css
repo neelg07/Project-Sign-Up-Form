@@ -5,6 +5,11 @@
     --color-theme: rgb(250, 8, 210); 
 }
 
+@font-face {
+    font-family: norse-font;
+    src: url(/Norse-Bold.otf)
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -43,9 +48,24 @@ img {
     opacity: 60%;
     width: 100%;
     height: 20vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     position: absolute;
     top: 40%;
+}
+
+h1 {
+    color: white;
+    font-size: 78px;
+    font-family: norse-font;
+}
+
+#icon {
+    height: 90%;
+    width: auto;
 }
 
 .photocred {
@@ -245,11 +265,11 @@ a:hover {
 
 /* Form Validaion */
 
-input:focus:invalid {
+input:focus:invalid:not(:placeholder-shown) {
     outline: 2px solid red;
 }
 
-input:focus:valid {
+input:valid:not(:placeholder-shown) {
     outline: green 2px solid;
 }
 
@@ -271,6 +291,66 @@ label[for="phone"]::after {
 /* Media Query for 900 px or less */
 
 @media only screen and (max-width: 900px) {
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .text::before {
+        content: "The Odin Project ";
+        text-align: center;
+        font-size: 36px;
+        font-family: fantasy;
+
+        position: absolute;
+        top: 15px;
+        right: 50%;
+
+        text-shadow: 2px 2px var(--color-theme);
+    }
+
+    .info {
+        background: url("/images/Free-download-Lofi-Background-HD.jpg");
+        position: relative;
+    }
+
+    .header {
+        opacity: 100%;
+        width: max(550px, 80vw);
+        position: absolute;
+        height: 400px;
+        top: 50%;
+
+        display: flex;
+        margin-top: -70px;
+    }
+
+    .text {
+        height: 450px;
+        min-width: 370px;
+        padding-left: 0;
+    }
+
+    form {
+        flex: 1 1 100%;
+    }
+
+    body {
+        min-width: 550px;
+    }
+
+    .copy {
+        position: relative;
+        top: 290px
+    }
+}
+
+@media only screen and (max-height: 650px) {
 
     .main {
         display: flex;
