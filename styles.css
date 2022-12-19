@@ -10,6 +10,10 @@ body, html {
     padding: 0;
 }
 
+html {
+    max-width: 100vw;
+}
+
 .main {
     display: grid;
     grid-template: 100vh / 40vw 60vw;
@@ -31,6 +35,7 @@ img {
 .image {
     display: flex;
     position: relative;
+    width: 40vw;
 }
 
 .odin-tag {
@@ -107,7 +112,7 @@ form {
 .header {
     background-color: rgb(123,104,238, 0.25);
 
-    width: 100%;
+    width: 60vw;
     height: 110%;
     
     display: flex;
@@ -126,7 +131,7 @@ form {
 
 label {
     font-size: 14px;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 1px black;
 }
 
 .fname {
@@ -175,7 +180,7 @@ input {
 }
 
 form > div {
-    padding-left: 20px
+    padding-left: 20px;
 }
 
 button {
@@ -214,12 +219,79 @@ span {
     font-size: 20px;
 }
 
-a:hover {
-    color: var(--color-theme);
-}
-
 a[href="#"] {
     color: white;
     font-weight: bolder;
     font-size: 15px;
+}
+
+a:hover {
+    color: var(--color-theme);
+}
+
+/* Form Validaion */
+
+input:focus:invalid {
+    outline: 2px solid red;
+}
+
+input:focus:valid {
+    outline: green 2px solid;
+}
+
+
+/* Media Query for 900 px or less */
+
+@media only screen and (max-width: 900px) {
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .text::before {
+        content: "The Odin Project ";
+        text-align: center;
+        font-size: 36px;
+        font-family: fantasy;
+
+        position: absolute;
+        top: 15px;
+        right: 50%;
+
+        text-shadow: 2px 2px var(--color-theme);
+    }
+
+    .info {
+        background: url("/images/Free-download-Lofi-Background-HD.jpg");
+        position: relative;
+    }
+
+    .header {
+        opacity: 100%;
+        width: max(550px, 80vw);
+        position: absolute;
+        height: 400px;
+        top: 50%;
+
+        display: flex;
+    }
+
+    .text {
+        height: 450px;
+        min-width: 370px;
+        padding-left: 0;
+    }
+
+    form {
+        flex: 1 1 100%;
+    }
+
+    body {
+        min-width: 550px;
+    }
 }
