@@ -239,6 +239,20 @@ input:focus:valid {
     outline: green 2px solid;
 }
 
+.copy {
+    color: white;
+    text-shadow: 1px 1px var(--color-theme);
+    font-size: 13px;
+
+    height: 20px;
+    min-width: 165px;
+}
+
+.copy > a {
+    color: var(--color-theme);
+    text-shadow: none;
+}
+
 
 /* Media Query for 900 px or less */
 
@@ -279,6 +293,7 @@ input:focus:valid {
         top: 50%;
 
         display: flex;
+        margin-top: -70px;
     }
 
     .text {
@@ -293,5 +308,10 @@ input:focus:valid {
 
     body {
         min-width: 550px;
+    }
+
+    .copy {
+        position: relative;
+        top: 290px
     }
 }
