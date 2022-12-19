@@ -229,16 +229,6 @@ a:hover {
     color: var(--color-theme);
 }
 
-/* Form Validaion */
-
-input:focus:invalid {
-    outline: 2px solid red;
-}
-
-input:focus:valid {
-    outline: green 2px solid;
-}
-
 .copy {
     color: white;
     text-shadow: 1px 1px var(--color-theme);
@@ -251,6 +241,30 @@ input:focus:valid {
 .copy > a {
     color: var(--color-theme);
     text-shadow: none;
+}
+
+/* Form Validaion */
+
+input:focus:invalid {
+    outline: 2px solid red;
+}
+
+input:focus:valid {
+    outline: green 2px solid;
+}
+
+label[for="email"]::after {
+    content: "(email@example.com)";
+    font-size: smaller;
+    display: block;
+    text-shadow: 1px 1px black;
+}
+
+label[for="phone"]::after {
+    display: block;
+    content: "(xxx-xxx-xxxx / xxxxxxxxxx)";
+    font-size: smaller;
+    text-shadow: 1px 1px black;
 }
 
 
